@@ -1,0 +1,2 @@
+language = "csharp"
+run = "mcs -out:banco.exe 'src/MainClass.cs' 'src/Conta.cs' 'src/Cliente.cs'; mono banco.exe"
