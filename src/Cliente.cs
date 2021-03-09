@@ -1,38 +1,20 @@
 using System;
 
 class Cliente{
-		private string nome;
-		private string cpf;
-		private DateTime dtNasc;
+		public string Nome {get ; set; }
+		public string Cpf {get ; set; }
+		public DateTime DtNasc {get ; set; }
 
 		public Cliente(){
 
 		}
 		public Cliente(string nome, string cpf, DateTime dtnasc){
-			this.nome = nome;
-			this.cpf = cpf;
-			this.dtNasc = dtnasc;
+			this.Nome = nome;
+			this.Cpf = cpf;
+			this.DtNasc = dtnasc;
 		}
-		public void SetNome(string nome){
-			this.nome = nome;
-		}
-		public void SetCPF(string cpf){
-			this.cpf = cpf;
-		}
-		public void SetDtNasc(DateTime dt){
-			this.dtNasc = dt;
-		}
-		public string GetNome(){
-			return this.nome;
-		}
-		public string GetCPF(){
-			return this.cpf;
-		}
-		public DateTime GetDtNasc(){
-			return this.dtNasc;
-		}
-
+		
 		public override string ToString(){
-			return $"\n Dados do Cliente \n Cliente: {this.nome}; CPF: {this.cpf}; Data nasc.: {this.dtNasc.ToString("dd/MM/yyyy")}";
+			return $"\n Dados do Cliente \n Cliente: {this.Nome}; CPF: {this.Cpf}; Data nasc.: {this.DtNasc.ToString("dd/MM/yyyy")}";
 		}
 }

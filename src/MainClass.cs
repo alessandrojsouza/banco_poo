@@ -19,13 +19,13 @@ class Programa{
 		Console.WriteLine("\nABERTURA DE CONTA\n");
 		
 		Console.Write("Digite o nome do cliente: ");
-		cliente.SetNome(Console.ReadLine());
+		cliente.Nome = Console.ReadLine();
 		
 		Console.Write("Digite o nome do cpf: ");
-		cliente.SetCPF(Console.ReadLine());
+		cliente.Cpf = Console.ReadLine();
 		
 		Console.Write("Digite a data nasc.: ");
-		cliente.SetDtNasc(DateTime.Parse(Console.ReadLine()));
+		cliente.DtNasc = DateTime.Parse(Console.ReadLine());
 		
 		return cliente;
 	}

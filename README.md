@@ -1,15 +1,14 @@
 # Projeto Agência Bancária
 
 ## Objetivo da Branch
-O  código apresentado nesta branch aplica os conceito de vetores para simular um banco de contas. 
 
-Para isso cada posição do vetor vai armazenar um objeto do tipo conta, conforme se apresenta na figura abaixo. O banco pode armazenar até 100 contas, dado pelo tamanho estático do vetor.
+O  código apresentado nesta branch aplica os conceito de propriedades nas classes CLIENTE e CONTA. Com isso, observa-se uma sensível diminuição no código fontes dessas classes já que os métodos acessores são __auto-implementados__.
 
-![vetor](img/vetor.png)
 
-A classe Banco que encapsula comportamentos que dão suporte ao armazenamento e manipulação das contas bancárias.
 
 ## Funcionalidades
+
+Mesmas funcionalidades implementadas na [branch de Vetores](https://github.com/alessandrojsouza/banco_poo/tree/array_propertires).
 
 1. Abrir Conta
 2. Saldo
@@ -22,4 +21,10 @@ A classe Banco que encapsula comportamentos que dão suporte ao armazenamento e 
 
 ## Classes Envolvidas
 
-![vetor](img/modelo_c.jpg)
+Atualização no modelo de classes para atender  uso de propriedades nas classes CLIENTE e CONTA.
+
+![](img/modelo_d.jpg)
+
+## Referências
+
+Documentação da Linguagem:    https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/classes-and-structs/properties

@@ -3,71 +3,22 @@ using System;
 class Conta{
 
 	//Declaração dos atributos da classe
-	private int numero;
-	private SituacaoConta situacao;
-	private DateTime dataAbertura;
-	private DateTime dataEncerramento;
-	private double saldo;
-	private Cliente cliente;
+	public int Numero {get; }
+	public SituacaoConta Situacao {get; set; }
+	public DateTime DataAbertura {get; }
+	public DateTime DataEncerramento {get; }
+	public double Saldo {get; set;}
+	public Cliente Cliente {get;}
 
 
 	//Implementação dos construtores 
 	public Conta(){}
 
 	public Conta(Cliente c, int numero){
-		this.cliente = c;
-		this.situacao = SituacaoConta.Aberta;
-		this.dataAbertura = DateTime.Now;
-		this.numero = numero;
-	}
-
-	//Implementação dos métodos acessores
-	public void SetNumero(int num){
-		this.numero = num;
-	}
-
-	public void SetCliente(Cliente c){
-		this.cliente = c;
-	}
-
-	public void SetSaldo(double valor){
-		this.saldo = valor;
-	}
-
-	public void SetSituacao(SituacaoConta sitconta){
-		this.situacao = sitconta;
-	}
-
-	public void SetDataAbertura(DateTime dt_abertura){
-		this.dataAbertura = dt_abertura;
-	}
-
-	public void SetDataEncerramento(DateTime dt_fechamento){
-		this.dataEncerramento = dt_fechamento;
-	}
-
-	public DateTime GetDataAbertura(){
-		return this.dataAbertura;
-	}
-
-	public DateTime GetDataEncerramento(){
-		return this.dataEncerramento;
-	}
-
-	public SituacaoConta GetSituacao(){
-		return this.situacao;
-	}
-
-	public int GetNumero(){
-		return this.numero;
-	}
-
-	public Cliente GetCliente(){
-		return this.cliente;
-	}
-
-	public double GetSaldo(){
-		return this.saldo;
+		this.Cliente = c;
+		this.Situacao = SituacaoConta.Aberta;
+		this.DataAbertura = DateTime.Now;
+		this.Numero = numero;
 	}
 
  //Implementação dos métodos de negócio 
@@ -76,11 +27,11 @@ class Conta{
 			Console.WriteLine ("\nValor inválido!!\n");
 			return false;
 		}
-		if(valor > saldo){
+		if(valor > Saldo){
 			Console.WriteLine ("\nSaldo Insuficiente!!\n");
 			return false;
 		}else{
-				saldo -= valor;
+				this.Saldo -= valor;
 				return true;
 		}
 	}
@@ -91,17 +42,17 @@ class Conta{
 				return false;
 		}		
 			else{
-				saldo += valor;
+				Saldo += valor;
 				return true;
 			}
 	}
 
 	public bool Fechar(){
-		if(saldo > 0 ){
-			Console.WriteLine($"\nConta com saldo positvo.\nRealize um saque de {saldo:c2} para fechar a conta.");
+		if(Saldo > 0 ){
+			Console.WriteLine($"\nConta com saldo positvo.\nRealize um saque de {Saldo:c2} para fechar a conta.");
 			return false;
 		}else{
-			this.situacao = SituacaoConta.Fechada;
+			this.Situacao = SituacaoConta.Fechada;
 		//	Console.WriteLine($"\nConta fechada com SUCESSO!\n");
 			return true;
 		}
@@ -110,7 +61,7 @@ class Conta{
 
 	//Reescrita do método ToString() 
 	public override string ToString(){
-		return $"Dados do Conta \n\nConta: {this.numero}; Saldo: {this.saldo:0.00}; Situação: {this.situacao}; Data Abertura: {this.dataAbertura} Cliente:{cliente.GetNome()}; CPF:{cliente.GetCPF()};";
+		return $"Dados do Conta \n\nConta: {this.Numero}; Saldo: {this.Saldo:0.00}; Situação: {this.Situacao}; Data Abertura: {this.DataAbertura} Cliente:{Cliente.Nome}; CPF:{Cliente.Cpf};";
 	}
 
 	

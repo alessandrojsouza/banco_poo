@@ -23,7 +23,7 @@ class Banco{
  //Fecha uma conta que se encontra no vetor
 	public void FecharConta(int numero){
 		for(int i=0; i<100; i++){
-			if(contas[i] != null && contas[i].GetNumero() == numero && contas[i].GetSituacao() == SituacaoConta.Aberta){
+			if(contas[i] != null && contas[i].Numero == numero && contas[i].Situacao == SituacaoConta.Aberta){
 				if(contas[i].Fechar())
 						Console.WriteLine("\nCONTA FECHADA COM SUCESSO");
 						break;
@@ -56,7 +56,7 @@ class Banco{
 		Conta conta;
 		if(GetConta(numConta)!=null){
 			conta = GetConta(numConta);
-			Console.WriteLine($"\nO Saldo da conta é {conta.GetSaldo():c2}"); 
+			Console.WriteLine($"\nO Saldo da conta é {conta.Saldo:c2}"); 
 		}else
 			Console.WriteLine("\nCONTA INEXISTENTE!!");
 	}
@@ -64,14 +64,14 @@ class Banco{
 	public double GetCaixaBanco(){
 		double caixa= 0.0;
 		foreach(Conta c in contas)
-			if(c != null && c.GetSituacao() != SituacaoConta.Fechada)
-				caixa += c.GetSaldo();
+			if(c != null && c.Situacao != SituacaoConta.Fechada)
+				caixa += c.Saldo;
 		return caixa;
 	}
 
 	public Conta GetConta(int numero){
 		for(int i=0; i<100; i++)
-			if(contas[i] != null && contas[i].GetNumero() == numero){
+			if(contas[i] != null && contas[i].Numero == numero){
 				//Console.WriteLine("erro aqui");
 				return contas[i];
 			}
